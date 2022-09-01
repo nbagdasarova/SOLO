@@ -7,57 +7,200 @@
 
 :root {
   --blue: #091a2b;
-  --greyfont: #9f9f9f;
-  --greybackgr: #f1f1f1;
-  --greyborder: #e9e9e9;
-  --darkgrey: #333333;
-  --white: #ffffff;
-  --mediumgrey: #666666;
+  --orange-color: #fb8d04;
+  --grey-text: rgba(255, 255, 255, 0.78);
 }
 body {
   background-color: var(--blue);
 }
 
-    .container {
-        width: 1360px;
-        height: auto;
-        margin: auto;
-      }
+.container {
+  width: 1296px;
+  height: auto;
+  margin: auto;
+}
 
 .header-top-bar {
-    padding-top: 25px;
-    padding-bottom: 15px;
-    display: flex;
-
+  padding-top: 25px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
 }
 .logo {
-    height: 78px;
-    width: 100px;
-    background-image: url('https://solo.ge/uncompiled-unbundled/assets/logo-responsive.svg');
-    background-repeat: no-repeat;
-    align-items: center;
+  height: 38px;
+  width: 122px;
+  background-repeat: no-repeat;
+  align-items: center;
 }
 
 .navigation-top-menu {
-    height: 78px;
-    width: 500px;
-    background-color: aqua;
+  height: 78px;
+  width: 500px;
+}
+.navigation-top-menu ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  padding: 15px;
+  font-size: 14px;
+  color: var(--grey-text);
+  font-family: BOG;
+  font-stretch: normal;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+  line-height: 1.4em;
+}
+.active {
+  color: var(--orange-color);
 }
 .bar-navigation-icons {
-    height: 78px;
-    width: 50px;
-    background-color: aqua;
-margin-left: 200px;
+  height: 32px;
+  width: 64px;
+  display: flex;
+  color: var(--grey-text);
+  justify-content: space-betweens;
+}
+.bar-navigation-icons div {
+  margin: 7px;
 }
 .acct-switcher {
-    height: 78px;
-    width: 200px;
-    background-color: aqua;
-    margin-left: 100px;
+  height: 38px;
+  width: 178px;
+  display: flex;
+  font-weight: 500;
+  color: inherit;
+  text-align: left;
+  line-height: 1.4em;
+  letter-spacing: normal;
+}
+.logo-wrapper {
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+.acct-logo {
+  box-sizing: border-box;
+  color: white;
+  background-color: var(--orange-color);
+  border-radius: 50%;
+  padding: 8px;
+  width: 32px;
+}
+
+.acct-switcher p {
+  font-weight: 500;
+  font-size: 12px;
+  text-decoration: none;
+  margin: 7px;
+  color: var(--orange-color);
+}
+.switcher-arrow {
+  height: 12px;
+  margin: 10px;
+  color: var(--grey-text);
 }
 .lang {
-    height: 78px;
-    width: 70px;
-    background-color: aqua;
-    margin-left: 10px;
+  height: 32px;
+  width: 44px;
+  padding-top: 5px;
+}
+.lang p {
+  font-size: 14px;
+  color: var(--grey-text);
+  text-align: left;
+  text-decoration: none;
+  font-weight: 500;
+}
+.became-solo {
+  width: 125px;
+  height: 32px;
+  background-color: var(--orange-color);
+  border-radius: 2px;
+  align-items: center;
+  color: var(--grey-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* secont menu */
+
+.header-bpttom-section {
+  background-color: rgb(43, 58, 72);
+  height: 58px;
+}
+.bottom-menu ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  padding: 15px;
+  font-size: 14px;
+  color: var(--grey-text);
+  font-family: BOG;
+  font-stretch: normal;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+  line-height: 1.4em;
+}
+.baner-section {
+  height: 510px;
+  padding-top: 50px;
+  position: relative;
+}
+.title {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 32px;
+}
+.baner-img {
+  background-image: url("https://ramad.bog.ge/s3/solo/images/a3dd4512-dc72-45cd-b93c-b96a8b050eb2.png");
+  height: 300px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(43, 25, 25, 0.3), #2b1919);
+  position: absolute;
+  transition: 0.5s;
+}
+.content {
+  width: calc(100% - 80px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 40px;
+  justify-content: center;
+  position: absolute;
+  top: 0%;
+}
+
+.baner-text {
+  font-weight: bold;
+  font-size: 24px;
+  color: white;
+}
+.baner-btn {
+  width: 120px;
+  height: 32px;
+  background-color: var(--orange-color);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+.baner-btn p {
+  color: var(--grey-text);
 }
