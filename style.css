@@ -242,6 +242,7 @@ body {
   display: flex;
   width: 100%;
   align-items: flex-start;
+  margin-bottom: 150px;
 }
 .selects {
   display: flex;
@@ -295,4 +296,22 @@ body {
   font-size: 14px;
   color: var(--orange-color);
   margin-top: 30px;
+}
+/* footer */
+.footer-items {
+  height: 106px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.footer-logo {
+  height: 15px;
+  width: 15px;
+}
+.footer-title {
+  font-size: 14px;
+  color: white;
 }
