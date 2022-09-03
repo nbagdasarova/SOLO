@@ -1,10 +1,20 @@
-* {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0px;
-  /* background-color: #2e2e2e; */
-}
 
+@font-face{
+
+  font-family: 'BOG';
+  src: url('https://webstatic.bog.ge/fonts/markgeo/MarkGEO-Light/MarkGEO-Light.woff') format('woff');
+  font-weight: normal; 
+  font-style: normal;
+  
+  }
+
+  * {
+    box-sizing: border-box;
+    font-family: 'BOG';
+    margin: 0px;
+    /* background-color: #2e2e2e; */
+  }
+  
 :root {
   --blue: #091a2b;
   --orange-color: #fb8d04;
@@ -133,6 +143,7 @@ body {
 .header-bpttom-section {
   background-color: rgb(43, 58, 72);
   height: 58px;
+  position: sticky;
 }
 .bottom-menu ul {
   display: flex;
