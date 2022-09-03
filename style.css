@@ -286,7 +286,9 @@ body {
 .developer-img {
   height: 160px;
   width: 100%;
-  background-color: #2b1919;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .developer-title {
