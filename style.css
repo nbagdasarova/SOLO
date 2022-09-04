@@ -267,6 +267,30 @@ body {
   height: 367px;
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 10px;
+  padding: 24px;
+}
+.filter-title{
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 13px;
+color: rgb(139, 139, 139);
+}
+.filter-section {
+  margin-top: 20px;
+  display: block;
+  color:rgba(255, 255, 255, 0.9);
+  font-size:12px;
+}
+.filter-section input{
+  margin-bottom: 16px; 
+}
+
+#constructionType {
+  margin-top: 32px;
+}
+.price-filter {
+  margin-top: 32px;
 }
 .items-wraper {
   width: calc(100% - 268px);
