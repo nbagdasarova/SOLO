@@ -11,4 +11,26 @@ function fetchCatalog(urlValue) {
       ctl.render();
     });
 }
+
+// if city checkboxed 
+ 
+function getCityUrl(value) {   
+ let filteredUrl=soloUrl+`&cityParam=${value}`
+return filteredUrl}
+
+// fetchCatalog (getCityUrl('ბათუმი'))
+
+let checked = document.getElementsByClassName("checkbox");
+for (let i = 0; i < checked.length; i++) {
+  let elem = checked[i];
+
+  elem.addEventListener("change", () => {
+    if (event.currentTarget.checked) {
+        
+    fetchCatalog(getCityUrl (elem.value));}
+    else {fetchCatalog(soloUrl)}
+  });
+}
+// if radio btn ia clicked
+
 fetchCatalog(soloUrl);
