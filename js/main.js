@@ -15,7 +15,7 @@ function fetchCatalog(urlValue) {
 // if city checkboxed 
  
 function getCityUrl(value) {   
- let filteredUrl=soloUrl+`&cityParam=${value}`
+ let filteredUrl=soloUrl+`&cityParam=${value}`;
 return filteredUrl}
 
 // fetchCatalog (getCityUrl('ბათუმი'))
@@ -23,14 +23,26 @@ return filteredUrl}
 let checked = document.getElementsByClassName("checkbox");
 for (let i = 0; i < checked.length; i++) {
   let elem = checked[i];
-
   elem.addEventListener("change", () => {
-    if (event.currentTarget.checked) {
-        
+    if (event.currentTarget.checked) {        
     fetchCatalog(getCityUrl (elem.value));}
     else {fetchCatalog(soloUrl)}
   });
 }
 // if radio btn ia clicked
+
+function getPriceUrl(minValue,maxValue) {
+    let filteredUrl=soloUrl+`&fromParam=${minValue}`;
+    return filteredUrl}
+
+    let checkedRadio = document.getElementsByClassName("radio");
+    for (let i = 0; i < checkedRadio.length; i++) {
+      let elem = checkedRadio[i];
+      elem.addEventListener("click", () => {
+        i   
+        fetchCatalog(getPriceUrl(elem.value));})
+        
+      
+      }
 
 fetchCatalog(soloUrl);
