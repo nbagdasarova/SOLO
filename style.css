@@ -286,11 +286,9 @@ color: rgb(139, 139, 139);
   margin-bottom: 16px; 
 }
 
-#constructionType {
-  margin-top: 32px;
-}
 .price-filter {
   margin-top: 32px;
+  margin-bottom: 34px;
 }
 .items-wraper {
   width: calc(100% - 268px);
@@ -351,4 +349,40 @@ color: rgb(139, 139, 139);
 .footer-title {
   font-size: 14px;
   color: white;
+}
+
+@media screen and (max-width: 1296px) {
+  .container {
+    width: 90%;
+  }
+.navigation-top-menu {
+  display: none;
+}
+.bottom-menu {
+  display: none;
+}
+.catalog-items {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 32px;
+}
+.developer-item {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100%;
+    padding: 16px;
+    justify-content: space-between;
+  }
+.developer-img {
+  width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+
+.text-content{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 }
