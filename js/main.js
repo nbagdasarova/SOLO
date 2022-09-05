@@ -18,39 +18,80 @@ function fetchCatalog(urlValue) {
     });
 }
 
+fetchCatalog(soloUrl);
+
 // if city checkboxed
 
-function getCityUrl(value) {
-  let filteredUrl = soloUrl + `&cityParam=${value}`;
-  return filteredUrl;
-}
+// function getCityUrl(value) {
+//   let filteredUrl = soloUrl + `&cityParam=${value}`;
+//   return filteredUrl;
+// }
 
 // fetchCatalog (getCityUrl('ბათუმი'))
 
-let checked = document.getElementsByClassName("checkbox");
-for (let i = 0; i < checked.length; i++) {
-  let elem = checked[i];
-  elem.addEventListener("change", () => {
-    if (event.currentTarget.checked) {
-      fetchCatalog(getCityUrl(elem.value));
-    } else {
-      fetchCatalog(soloUrl);
-    }
-  });
-}
-// if radio btn ia clicked
+function getUrl() {
+  let checkedCity = document.getElementsByClassName("checkbox");
+  let newUrl = soloUrl + "&cityParam=";
+  let checkedRadio = document.getElementsByClassName("radio");
+  for (let i = 0; i < checkedCity.length; i++) {
+    let elem = checkedCity[i];
+    elem.addEventListener("change", () => {
+      if (event.currentTarget.checked) {
+        cityArr.push({ id: i, value: elem.value });
+        newUrl = newUrl + `${elem.value}` + ",";
+      } else newUrl = soloUrl;
 
-function getPriceUrl(minValue, maxValue) {
-  let filteredUrl = soloUrl + `&fromParam=${minValue}`;
-  return filteredUrl;
+      fetch(newUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          let res = data.data.items;
+          let ctl = new _Catalog(res);
+          console.log("test", res);
+          ctl.render();
+        });
+    });
+
+    // for (let i = 0; i < checkedRadio.length; i++) {
+    //     let item = checkedRadio[i];
+    //     item.addEventListener("click", () => {
+    //       if (event.currentTarget.checked){
+    //       newUrl =  newUrl + `&fromParam=${minValue}`
+    //     } });
+
+    //     }
+    //   }
+  }
+
+  console.log(newUrl);
 }
 
-let checkedRadio = document.getElementsByClassName("radio");
-for (let i = 0; i < checkedRadio.length; i++) {
-  let elem = checkedRadio[i];
-  elem.addEventListener("click", () => {
-    fetchCatalog(getPriceUrl(elem.value));
-  });
-}
+getUrl();
 
-fetchCatalog(soloUrl);
+// for (let i = 0; i < checkedCity.length; i++) {
+
+//   let elem = checkedCity[i];
+//   elem.addEventListener("change", () => {
+//        if (event.currentTarget.checked) {
+//             let newUrl = soloUrl + `&cityParam=${elem.value}`;
+//       fetchCatalog(newUrl);
+//     } else {
+//       fetchCatalog(soloUrl);
+//     }
+//   });
+// }
+// // if radio btn ia clicked
+
+// function getPriceUrl(minValue, maxValue) {
+//   let filteredUrl = soloUrl + `&fromParam=${minValue}`;
+//   return filteredUrl;
+// }
+
+// // let checkedRadio = document.getElementsByClassName("radio");
+// for (let i = 0; i < checkedRadio.length; i++) {
+//   let elem = checkedRadio[i];
+//   elem.addEventListener("click", () => {
+//     fetchCatalog(getPriceUrl(elem.value));
+//   });
+// }
+
+// fetchCatalog(soloUrl);
