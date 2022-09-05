@@ -24,6 +24,7 @@ export class _Catalog {
       })
       .join("");
     console.log("catalog", catalog);
+    document.querySelector("#catalogId").innerHTML = "";
     document
       .querySelector("#catalogId")
       .insertAdjacentHTML("afterbegin", catalog);
