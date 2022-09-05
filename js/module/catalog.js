@@ -8,7 +8,8 @@ export class _Catalog {
       .map((elem) => {
         return `<div class="developer-item">
                 <div class="developer-img" style="background-image: url('${elem.image.url}');"></div>
-                <div class="developer-title">
+                <div class="text-content">
+                 <div class="developer-title">
                     <p>${elem.projectName}</p>
                 </div>
                 <div class="developer-subtitle">
@@ -17,6 +18,7 @@ export class _Catalog {
                 </div>
                 <div class="link-btn">
                     <p>გაიგეთ მეტი</p>
+                </div>
                 </div>
             </div>`;
       })
